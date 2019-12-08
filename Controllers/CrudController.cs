@@ -46,7 +46,7 @@ namespace Comp229_301052117_Assign3.Controllers
                 var allFiles = HttpContext.Request.Form.Files;
                 foreach (var pic in allFiles)
                 {
-                    if(pic != null && pic.Length > 0)
+                    if(pic != null )
                     {
                         var file = pic;
                         var upload = Path.Combine(environment.WebRootPath, "photos");
@@ -75,7 +75,7 @@ namespace Comp229_301052117_Assign3.Controllers
         {
             Recipes deletedRecipe = repository.DeleteRecipe(dishName);
             
-            return RedirectToAction("DataPage", "Home");
+            return RedirectToAction("DataPage", "Crud");
 
         }
         
@@ -103,6 +103,12 @@ namespace Comp229_301052117_Assign3.Controllers
             {
                 return View(repository.Recipes.FirstOrDefault(r => r.DishName == recipe.DishName));
             }
+        }
+        [Authorize]
+        public ViewResult Order()
+        {
+                return View("Order");
+            
         }
     }
 }

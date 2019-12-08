@@ -1,0 +1,28 @@
+﻿
+@model Comp229_301052117_Assign3.Models.Customer
+
+@{
+    Layout = "_GeneralLayout1";
+}
+
+@if (Model != null)
+{
+    <form class="p-a-1" method="post" asp-action="CustomerForm" asp-controller="Customer">
+        <div class="card text-white text-center bg-info mb-3" style="max-width: 40rem;">
+            <div class="card-header"><h3>Order details for customer @Model.Name</h3></div>
+            <div class="card-body">
+                <p>Order Time: @Model.OrderTime.TimeOfDay</p>
+                <p>Order date: @Model.OrderTime.ToString("dd/MM/yyyy") </p>
+                <p>Address: @Model.Address</p>
+                <p>Phone Number: @Model.Phone</p>
+                <p>Email: @Model.Email</p>
+
+                <div>
+                    <p>Your order will be delivered before @Model.OrderTime.AddHours(4).TimeOfDay</p>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+}

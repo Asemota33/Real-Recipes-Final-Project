@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "_GeneralLayout1";
+}
+
+@model Customer
+
+
+<div class="panel-heading text-center"><h2>Order Form </h2></div>
+<div class="panel-body">
+    <form class="p-a-1" asp-controller="Order" asp-action="CustomerForm" method="post">
+        <div asp-validation-summary="All" class="alert-danger"></div>
+
+        <input type="hidden" value="@DateTime.Now" asp-for="OrderTime" />
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input class="form-control" asp-for="Name" value="" />
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <input class="form-control" asp-for="Address" />
+        </div>
+
+        <div class="form-group">
+            <label>Phone:</label>
+            <input rows="3" class="form-control" asp-for="Phone" />
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input rows="3" class="form-control" asp-for="Email" />
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit" >
+                Submit Order
+            </button>
+        </div>
+    </form>
+</div>

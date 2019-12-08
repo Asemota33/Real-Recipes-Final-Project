@@ -28,6 +28,9 @@
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Crud" asp-action="DataPage">Recipe List</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Logout" asp-controller="Account">Log Out</a>
+                </li>
             </ul>
 
         </nav>
@@ -36,8 +39,8 @@
             <div class="col-2">
                 <img src="~/lib/realRecipe1.png" class="img-fluid" alt="Real Recipes logo">
                 <p class="text-muted">Learn how to make your favorite dishes fast!</p>
-                <a class="btn btn-sm btn-primary"
-                   asp-action="Logout" asp-controller="Account">Log Out</a>
+                @*<a class="btn btn-sm btn-primary"
+                   asp-action="Logout" asp-controller="Account">Log Out</a>*@
             </div>
             <div class="col-9">
 

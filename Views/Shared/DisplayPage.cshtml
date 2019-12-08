@@ -17,10 +17,6 @@
         <p>@Model.ingredients2</p>
         <p>@Model.ingredients3</p>
 
-        @* Loop Through the list of ingredients if possible *@
-        @*<p>@Model.Ingredients1</p>
-            <p>@Model.Ingredients2</p>
-            <p>@Model.Ingredients3</p>*@
 
         <h4>Description</h4>
         <p>@Model.Description</p>
@@ -30,6 +26,11 @@
         <p>This recipe feeds @Model.Servings people</p>
         <h4>Review</h4>
         <p>@Model.review</p>
+
+        <a asp-action="Order" asp-controller="Crud" class="btn btn-primary">
+            Order
+        </a>
+
 
     </div>
 }
